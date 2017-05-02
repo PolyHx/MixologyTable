@@ -1,0 +1,149 @@
+<div class="container" data-theme="2016-clean">
+
+  <div class="overlay"></div>
+  <div class="element-panel" id="info-panel">
+    <i class="fa fa-close" (click)="closeModal()"></i>
+    <div class="wiki-content">
+      <h3>{{ currentElement?.number }}. {{ currentElement?.name }}
+        <span>({{ currentElement?.symbol }})</span>
+      </h3>
+      <div class="info" [style.background-color]="getModalBackgroundColorForGroup(currentElement?.group)">
+        <span>{{ currentElement?.group }} drink</span>
+      </div>
+      <img *ngIf="currentElement?.image" src="{{ currentElement?.image }}">
+      <h4>Ingredients</h4>
+      <ul>
+        <li *ngFor="let ingredient of currentElement?.ingredients">
+          <span *ngIf="ingredient?.quantity == -1">{{ ingredient?.ingredient?.name }}</span>
+          <span *ngIf="ingredient?.quantity != -1">{{ ingredient?.quantity }} {{ ingredient?.unit?.name }} {{ ingredient?.ingredient?.name }}</span>
+        </li>
+      </ul>
+      <p>{{ currentElement?.instructions }}</p>
+
+      <a href="#" class="waves-effect waves-light btn" (click)="addToCart(currentElement)">Add to shopping list</a>
+    </div>
+  </div>
+
+  <div class="element-panel" id="cart-panel">
+    <i class="fa fa-close" (click)="closeCart()"></i>
+    <div class="wiki-content">
+      <h3>Elements in list</h3>
+      <p *ngIf="cart.length === 0">Please add recipes to shopping list</p>
+      <div *ngFor="let element of cart" class="info"
+           [style.background-color]="getModalBackgroundColorForGroup(element?.group)">
+        <span>{{ element?.number }}. {{ element?.name }}</span>
+      </div>
+      <h4 *ngIf="cart.length !== 0">Ingredients to buy</h4>
+      <ul>
+        <li *ngFor="let ingredient of ingredientsList">
+          <span *ngIf="ingredient?.quantity == -1">{{ ingredient?.ingredient?.name }}</span>
+          <span *ngIf="ingredient?.quantity != -1">{{ ingredient?.quantity }} {{ ingredient?.unit?.name }} {{ ingredient?.ingredient?.name }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- LABEL ROW -->
+  <div class="spacer label-slim double">Tequila drinks</div>
+  <div class="spacer label-slim"></div>
+  <div class="spacer label-slim"></div>
+  <div class="spacer label-slim"></div>
+  <div class="spacer label-slim"></div>
+  <div class="spacer label-slim"></div>
+  <div class="spacer label-slim"></div>
+  <div class="spacer label-slim"></div>
+  <div class="spacer label-slim double">Frozen drinks</div>
+
+
+  <!-- PERIOD 1 -->
+  <element [element]="getElementById(1)" (click)="openElementModal(1)"></element>
+  <element [element]="getElementById(2)" (click)="openElementModal(2)"></element>
+  <div class="spacer show">
+    <h1>Mixology</h1>
+  </div>
+  <div class="spacer"></div>
+  <element [element]="getElementById(3)" (click)="openElementModal(3)"></element>
+
+
+  <!-- PERIOD 2 -->
+  <element [element]="getElementById(4)" (click)="openElementModal(4)"></element>
+  <element [element]="getElementById(5)" (click)="openElementModal(5)"></element>
+  <div class="spacer label quadruple">Vodka drinks</div>
+  <div class="spacer label triple">Gin drinks</div>
+  <element [element]="getElementById(6)" (click)="openElementModal(6)"></element>
+  <element [element]="getElementById(7)" (click)="openElementModal(7)"></element>
+
+  <!-- PERIOD 3 -->
+  <element [element]="getElementById(8)" (click)="openElementModal(8)"></element>
+  <element [element]="getElementById(9)" (click)="openElementModal(9)"></element>
+  <element [element]="getElementById(10)" (click)="openElementModal(10)"></element>
+  <element [element]="getElementById(11)" (click)="openElementModal(11)"></element>
+  <element [element]="getElementById(12)" (click)="openElementModal(12)"></element>
+  <element [element]="getElementById(13)" (click)="openElementModal(13)"></element>
+  <element [element]="getElementById(14)" (click)="openElementModal(14)"></element>
+  <element [element]="getElementById(15)" (click)="openElementModal(15)"></element>
+  <element [element]="getElementById(16)" (click)="openElementModal(16)"></element>
+  <element [element]="getElementById(17)" (click)="openElementModal(17)"></element>
+  <element [element]="getElementById(18)" (click)="openElementModal(18)"></element>
+
+
+  <!-- PERIOD 4 -->
+  <element [element]="getElementById(19)" (click)="openElementModal(19)"></element>
+  <element [element]="getElementById(20)" (click)="openElementModal(20)"></element>
+  <element [element]="getElementById(21)" (click)="openElementModal(21)"></element>
+  <element [element]="getElementById(22)" (click)="openElementModal(22)"></element>
+  <element [element]="getElementById(23)" (click)="openElementModal(23)"></element>
+  <element [element]="getElementById(24)" (click)="openElementModal(24)"></element>
+  <element [element]="getElementById(25)" (click)="openElementModal(25)"></element>
+  <element [element]="getElementById(26)" (click)="openElementModal(26)"></element>
+  <element [element]="getElementById(27)" (click)="openElementModal(27)"></element>
+  <element [element]="getElementById(28)" (click)="openElementModal(28)"></element>
+  <element [element]="getElementById(29)" (click)="openElementModal(29)"></element>
+
+  <!-- PERIOD 5 -->
+  <element [element]="getElementById(30)" (click)="openElementModal(30)"></element>
+  <element [element]="getElementById(31)" (click)="openElementModal(31)"></element>
+  <element [element]="getElementById(32)" (click)="openElementModal(32)"></element>
+  <element [element]="getElementById(33)" (click)="openElementModal(33)"></element>
+  <element [element]="getElementById(34)" (click)="openElementModal(34)"></element>
+  <element [element]="getElementById(35)" (click)="openElementModal(35)"></element>
+  <element [element]="getElementById(36)" (click)="openElementModal(36)"></element>
+  <element [element]="getElementById(37)" (click)="openElementModal(37)"></element>
+  <element [element]="getElementById(38)" (click)="openElementModal(38)"></element>
+  <element [element]="getElementById(39)" (click)="openElementModal(39)"></element>
+  <element [element]="getElementById(40)" (click)="openElementModal(40)"></element>
+
+  <!-- PERIOD 6 -->
+  <element [element]="getElementById(41)" (click)="openElementModal(41)"></element>
+  <element [element]="getElementById(42)" (click)="openElementModal(42)"></element>
+  <div class="spacer showxl">
+    <div class="spacer label-slim" style="width: 100%;;">Shooter drinks</div>
+
+    <div class="spacer offset"></div>
+    <element [element]="getElementById(43)" (click)="openElementModal(43)"></element>
+    <element [element]="getElementById(44)" (click)="openElementModal(44)"></element>
+    <element [element]="getElementById(45)" (click)="openElementModal(45)"></element>
+    <element [element]="getElementById(46)" (click)="openElementModal(46)"></element>
+    <element [element]="getElementById(47)" (click)="openElementModal(47)"></element>
+    <element [element]="getElementById(48)" (click)="openElementModal(48)"></element>
+    <element [element]="getElementById(49)" (click)="openElementModal(49)"></element>
+    <element [element]="getElementById(50)" (click)="openElementModal(50)"></element>
+    <div class="spacer offset"></div>
+
+    <div class="spacer offset"></div>
+    <element [element]="getElementById(51)" (click)="openElementModal(51)"></element>
+    <element [element]="getElementById(52)" (click)="openElementModal(52)"></element>
+    <element [element]="getElementById(53)" (click)="openElementModal(53)"></element>
+    <element [element]="getElementById(54)" (click)="openElementModal(54)"></element>
+    <element [element]="getElementById(55)" (click)="openElementModal(55)"></element>
+    <element [element]="getElementById(57)" (click)="openElementModal(56)"></element>
+    <element [element]="getElementById(57)" (click)="openElementModal(57)"></element>
+    <element [element]="getElementById(58)" (click)="openElementModal(58)"></element>
+  </div>
+
+  <div class="cart-container" (click)="openCart()">
+    <i class="fa fa-list fa-2x"></i>
+  </div>
+</div>
+
