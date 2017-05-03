@@ -41,7 +41,7 @@ export class Application {
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({ extended: true }));
         this.app.use(cookieParser());
-        this.app.use(express.static(path.join(__dirname, '../../client')));
+        this.app.use(express.static(path.join(__dirname, '../../frontend/src')));
         this.app.use(express.static(path.join(__dirname, '../public')));
         this.app.use(cors());
     }
