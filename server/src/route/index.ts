@@ -14,7 +14,7 @@ module Route {
 
         private index(req: express.Request, res: express.Response) {
 
-            res.render("index", {});
+            res.sendFile("index.html");
         }
     }
 }
