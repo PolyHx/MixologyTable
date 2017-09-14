@@ -3,7 +3,7 @@ import {HttpClient} from "../utils/httpclient";
 
 @Injectable()
 export class RecipeService {
-  API_URL = "https://mixology.fun:8189";
+  API_URL = "https://mixology.fun";
 
   constructor(public http: HttpClient) {
   }
